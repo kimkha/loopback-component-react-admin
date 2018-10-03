@@ -47,4 +47,4 @@ Default value: `[ "*.find" ]`, which auto added to find method of all models.
 
 ## Note
 
-This is the updated version of [loopback3-xTotalCount](https://github.com/kimkha/loopback3-xTotalCount). On client side (mean `react-admin`), we don't need to change anything, just use [ra-data-simple-rest](https://www.npmjs.com/package/ra-data-simple-rest) as usual.
+This is the updated version of [loopback3-xTotalCount](https://github.com/kimkha/loopback3-xTotalCount) and [aor-loopback](https://github.com/kimkha/aor-loopback). On client side (mean `react-admin`), we don't need to change anything, just use [ra-data-simple-rest](https://www.npmjs.com/package/ra-data-simple-rest) as usual.
