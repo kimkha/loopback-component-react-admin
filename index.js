@@ -6,25 +6,14 @@ module.exports = function (app, options) {
       const filter = {
         skip: 0,
         limit: 50,
-        order: '',
-        where: {}
+        order: ''
       };
       if (req.query.filter) {
         try {
           const fields = JSON.parse(req.query.filter);
           for (let field in fields) {
             if (fields.hasOwnProperty(field)) {
-              if (field === 'where') {
-                // This query object is correctly parsed, do nothing
-                return null;
-              }
-              if (Array.isArray(fields[field])) {
-                filter.where[field] = {
-                  'inq': fields[field]
-                };
-              } else {
-                filter.where[field] = fields[field];
-              }
+              filter[field] = fields[field];
             }
           }
         } catch (e) {
@@ -56,7 +45,7 @@ module.exports = function (app, options) {
       let limit = 50;
       let skip = 0;
       if (ctx.args && ctx.args.filter) {
-        filter = ctx.args.filter.where;
+        filter = ctx.args.filter;
         limit = ctx.args.filter.limit;
         skip = ctx.args.filter.skip;
       }
